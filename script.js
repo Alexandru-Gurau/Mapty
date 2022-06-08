@@ -20,9 +20,9 @@ class Workout {
     } ${this.date.getDate()}`;
   }
 
-  click() {
-    this.clicks++;
-  }
+  // click() {
+  //   this.clicks++;
+  // }
 }
 
 class Running extends Workout {
@@ -76,7 +76,7 @@ class App {
     this._getPosition();
 
     // Get data from local storage
-    this._getLocalStorage();
+    // this._getLocalStorage();
 
     // Attach event handlers
     form.addEventListener('submit', this._newWorkout.bind(this));
@@ -192,7 +192,7 @@ class App {
     this._hideForm();
 
     // Set local storage to all workouts
-    this._setLocalStorage();
+    // this._setLocalStorage();
   }
 
   _renderWorkoutMarker(workout) {
@@ -280,21 +280,21 @@ class App {
     // workout.click();
   }
 
-  _setLocalStorage() {
-    localStorage.setItem('workouts', JSON.stringify(this.#workouts));
-  }
+  // _setLocalStorage() {
+  //   localStorage.setItem('workouts', JSON.stringify(this.#workouts));
+  // }
 
-  _getLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('workouts'));
+  // _getLocalStorage() {
+  //   const data = JSON.parse(localStorage.getItem('workouts'));
 
-    if (!data) return;
+  //   if (!data) return;
 
-    this.#workouts = data;
+  //   this.#workouts = data;
 
-    this.#workouts.forEach(el => {
-      this._renderWorkout(el);
-    });
-  }
+  //   this.#workouts.forEach(el => {
+  //     this._renderWorkout(el);
+  //   });
+  // }
 
   reset() {
     localStorage.removeItem('workouts');
@@ -304,26 +304,3 @@ class App {
 const app = new App();
 // new App();
 // Reset: app.reset() in console.log()
-
-// Exercitii
-/*
-// #1
-class Cat {
-  constructor(name) {
-    this.name = name;
-  }
-  speak() {
-    console.log(`${this.name} is a cat`);
-  }
-}
-
-class Lion extends Cat {
-  speak() {
-    super.speak();
-    console.log(`${this.name} is a lion`);
-  }
-}
-
-const stoten = new Lion('Stoten');
-stoten.speak();
-*/
